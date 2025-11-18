@@ -23,128 +23,292 @@
   <title>🔥 Hot New Memecoin</title>
 <style>
 
-/* ----------------------------- */
-/* TABLETTE (iPad / paysage mobile) */
-/* ----------------------------- */
+/* ============================= */
+/* BASE (desktop + global) */
+/* ============================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #0f1118; /* couleur sombre type dexscreener */
+  color: #ffffff;
+}
+
+a {
+  color: #4e8cff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.chakra-heading.custom-12tdaq9 {
+  margin: 0;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.chakra-text {
+  color: #e1e3e8;
+}
+
+.custom-1y86lsu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+}
+
+/* icônes */
+.chakra-icon {
+  vertical-align: middle;
+  color: #ffffff;
+}
+
+/* stack de base */
+.chakra-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* boutons Chakra */
+.chakra-button {
+  background-color: #1e2330;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.chakra-button:hover {
+  background-color: #2c3344;
+}
+
+/* tabs */
+.chakra-tabs .chakra-tabs__tab {
+  background-color: #1e2330;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 4px 4px 0 0;
+  margin-right: 2px;
+}
+.chakra-tabs .chakra-tabs__tab[aria-selected="true"] {
+  background-color: #4e8cff;
+  color: #0f1118;
+}
+.chakra-tabs__tab-panels {
+  background-color: #141722;
+  padding: 16px;
+  border-radius: 0 4px 4px 4px;
+}
+
+/* progress circulaire (liquidity) */
+.custom-1c577i1 svg {
+  width: 50px;
+  height: 50px;
+}
+.custom-1t9pz9x circle.chakra-progress__track {
+  stroke: #2c3344;
+}
+.custom-1t9pz9x circle.chakra-progress__indicator {
+  stroke: #4e8cff;
+  stroke-linecap: round;
+}
+
+/* ============================= */
+/* TABLETTE (entre ~641px et 1024px) */
+/* ============================= */
 @media (min-width: 641px) and (max-width: 1024px) {
 
-    /* CONTENEUR PRINCIPAL */
-    .custom-1y86lsu {
-        padding: 20px;
-        max-width: 900px;
-        margin: 0 auto;
-    }
+  /* conteneur principal */
+  .custom-1y86lsu {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+  }
 
-    /* HEADER TOKEN (wifdog / SOL / icônes) */
-    .custom-16gnnsm {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-    }
+  /* header token (titre + icônes) */
+  .custom-16gnnsm {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
 
-    h2.custom-12tdaq9 {
-        font-size: 1.8rem;
-        line-height: 1.2;
-    }
+  h2.custom-12tdaq9 {
+    font-size: 2rem;
+  }
 
-    /* TIME – RANK – SCORE */
-    .custom-ar71po,
-    .custom-r8w609,
-    .custom-1urntjj {
-        font-size: 1.2rem;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
+  /* icône copy + texte */
+  .custom-12tdaq9 svg {
+    width: 1.4em;
+    height: 1.4em;
+  }
 
-    /* BREADCRUMB (Solana / PumpSwap) */
-    .custom-1el71j0 {
-        margin-top: 10px;
-        flex-wrap: wrap;
-    }
+  /* zone time / rank / score */
+  .custom-ar71po,
+  .custom-r8w609,
+  .custom-1urntjj {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-    .custom-nkpfb9 {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+  /* breadcrumb (Solana, PumpSwap, etc.) */
+  .custom-1el71j0 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .custom-nkpfb9 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .custom-gbqtda img {
+    width: 24px;
+    height: 24px;
+  }
+  .custom-1cgn7ex img {
+    width: 20px;
+    height: 20px;
+  }
 
-    .custom-gbqtda img {
-        width: 22px;
-        height: 22px;
-    }
+  /* section des boutons (Twitter, More) */
+  .custom-vfuwc6 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .custom-1qmkv3p {
+    flex-direction: row;
+    gap: 14px;
+  }
+  .custom-uavd00,
+  .custom-69p76g {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }
 
-    /* SECTION BOUTONS (Twitter + More) */
-    .custom-vfuwc6 {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-    }
+  /* statistiques (price, liquidity, FDV, MktCap) */
+  .custom-24ivmg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .custom-24xj36 {
+    gap: 16px;
+  }
+  .custom-8j90gh,
+  .custom-1fxq6tp {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .custom-9wsasl {
+    font-size: 1.15rem;
+    opacity: 0.85;
+  }
+  .custom-0 {
+    font-size: 1.4rem;
+  }
 
-    .custom-1qmkv3p {
-        flex-direction: row;
-        gap: 12px;
-    }
+  /* circle de liquidity */
+  .custom-jx0ju7 {
+    padding: 12px 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .custom-12cfr4k {
+    margin-left: 12px;
+    transform: scale(1.2);
+  }
 
-    .custom-uavd00,
-    .custom-69p76g {
-        padding: 12px 18px;
-        font-size: 1.1rem;
-    }
+  /* icônes plus grosses */
+  .chakra-icon {
+    width: 1.6em;
+    height: 1.6em;
+  }
 
-    /* STATS (Price / Liquidity / Volume) */
-    .custom-24ivmg {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
+  /* tab */
+  .chakra-tabs .chakra-tabs__tab {
+    padding: 10px 16px;
+    font-size: 1.1rem;
+  }
+  .chakra-tabs__tab-panels {
+    padding: 20px;
+  }
 
-    .custom-24xj36 {
-        gap: 14px;
-    }
+  /* espacement pour les “cards” ou sections */
+  .custom-13zeudb, /* wrapper principal de stats / onglets */
+  .custom-1dk04y4 {
+    margin-top: 24px;
+  }
 
-    .custom-8j90gh,
-    .custom-1fxq6tp {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+  /* footer des stats (Txns / Volume / Makers) */
+  .custom-1fdmwln .chakra-stack {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
 
-    .custom-9wsasl {
-        font-size: 1.1rem;
-        opacity: 0.85;
-    }
+  .custom-16409fq {
+    gap: 8px;
+  }
 
-    .custom-0 {
-        font-size: 1.3rem;
-    }
+  .custom-0 > .custom-1ktl91g {
+    width: 60%; /* barre de progression ou indicateur graphique */
+  }
+}
 
-    /* LIQUIDITY CIRCLE */
-    .custom-jx0ju7 {
-        padding: 10px 0;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .custom-12cfr4k {
-        transform: scale(1.1);
-        margin-left: 10px;
-    }
-
-    /* ADAPTATION DES ICONES */
-    .chakra-icon {
-        width: 1.3em;
-        height: 1.3em;
-    }
-
-    /* Petites optimisations */
-    .custom-1dk04y4 {
-        margin-top: 20px;
-    }
-
-    .custom-wpcv6r {
-        gap: 25px;
-    }
+/* ============================= */
+/* MOBILE (petits écrans) */
+/* ============================= */
+@media (max-width: 640px) {
+  .custom-1y86lsu {
+    padding: 16px;
+  }
+  h2.custom-12tdaq9 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .custom-16gnnsm {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .custom-1el71j0,
+  .custom-nkpfb9 {
+    justify-content: center;
+    gap: 8px;
+  }
+  .custom-24ivmg {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .custom-8j90gh,
+  .custom-1fxq6tp {
+    flex-direction: column;
+    align-items: center;
+  }
+  .custom-jx0ju7 {
+    justify-content: center;
+  }
+  .chakra-tabs .chakra-tabs__tab {
+    flex: 1;
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+  .chakra-tabs__tab-panels {
+    padding: 16px;
+  }
 }
 
 	
